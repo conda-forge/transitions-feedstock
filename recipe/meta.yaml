@@ -1,5 +1,5 @@
 {% set name = "transitions" %}
-{% set version = "0.6.9" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: afe0f498cf1f3f3b0fc13562011b8895a172df8f891dbb5118923d46e78a96d7
+  sha256: b5712bc1ef3854ff3104cd22502e2ce66c1da5b9ace90427b97bd9b7efd921fa
 
 build:
   noarch: python
