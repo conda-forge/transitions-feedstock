@@ -29,13 +29,14 @@ test:
   requires:
     - dill
     - mock
-    - nose
+    - pytest
+    - pytest-cov
     - pycodestyle
     - pygraphviz  # [not win]
   imports:
     - transitions
   commands:
-    - nosetests
+    - pytest
 
 about:
   home: https://github.com/pytransitions/transitions
