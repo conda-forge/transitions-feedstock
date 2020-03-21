@@ -18,6 +18,7 @@ requirements:
   host:
     - pip
     - python
+    - six
   run:
     - python
     - six
@@ -33,10 +34,11 @@ test:
     - pytest-cov
     - pycodestyle
     - pygraphviz  # [not win]
+    - python-graphviz
   imports:
     - transitions
   commands:
-    - pytest
+    - pytest --pyargs -k "not conformance" --cov transitions
 
 about:
   home: https://github.com/pytransitions/transitions
