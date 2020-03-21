@@ -1,5 +1,5 @@
 {% set name = "transitions" %}
-{% set version = "0.7.2" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name }}
@@ -7,17 +7,18 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5566c9d32e438ee9eb1f046e3ac1a0b2689f32807b47859210162084d4c84ab7
+  sha256: 1e7d213ce04114e4b1f861986282294b494c5a7d0448faa28849ec84298862bf
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
     - python
+    - six
   run:
     - python
     - six
@@ -33,17 +34,20 @@ test:
     - pytest-cov
     - pycodestyle
     - pygraphviz  # [not win]
+    - python-graphviz
+    - pip
   imports:
     - transitions
   commands:
-    - pytest
+    - python -m pip check
+    - pytest --pyargs -k "not conformance" --cov transitions
 
 about:
   home: https://github.com/pytransitions/transitions
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A lightweight, object-oriented finite state machine implementation in Python'
+  summary: A lightweight, object-oriented finite state machine implementation in Python
 
 extra:
   recipe-maintainers:
