@@ -35,9 +35,11 @@ test:
     - pycodestyle
     - pygraphviz  # [not win]
     - python-graphviz
+    - pip
   imports:
     - transitions
   commands:
+    - python -m pip check
     - pytest --pyargs -k "not conformance" --cov transitions
 
 about:
