@@ -5,7 +5,7 @@ Home: https://github.com/pytransitions/transitions
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A lightweight, object-oriented finite state machine implementation in Python
 
