@@ -1,4 +1,3 @@
-{% set name = "transitions" %}
 {% set version = "0.9.0" %}
 
 package:
@@ -6,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/t/transitions/transitions-{{ version }}.tar.gz
   sha256: 2f54d11bdb225779d7e729011e93a9fb717668ce3dc65f8d4f5a5d7ba2f48e10
 
 build:
@@ -40,7 +39,7 @@ test:
     - transitions
   commands:
     - python -m pip check
-    - pytest --pyargs -k "not conformance" --cov transitions
+    - pytest -vv --pyargs -k "not conformance" --cov=transitions --cov-report=term-missing:skip-covered --no-cov-on-fail
 
 about:
   home: https://github.com/pytransitions/transitions
